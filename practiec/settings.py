@@ -10,6 +10,14 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+
+
+
+
+
+
+
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -124,3 +132,21 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+import os
+
+# Allow all hosts temporarily (we fix later)
+ALLOWED_HOSTS = ['*']
+
+# Static files setup
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+DEBUG = False
+
+SECRET_KEY = 'your-very-strong-secret-key'
+
+ALLOWED_HOSTS = ['your-app-name.onrender.com']
+
+# Static files (important for production)
+import os
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
